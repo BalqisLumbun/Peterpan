@@ -1,0 +1,44 @@
+import tkinter as tk
+import tkinter.messagebox as msg
+import random
+
+class MyApp(tk.Frame):
+    def __init__(self,master = None):
+        super().__init__(master)
+        self.pack()
+        self.fan_ariel = tk.StringVar()
+        self.create_widgets()
+
+    def create_widgets(self):
+        self.lbl_judul = tk.Label(self, text = "Nama",font=('Helvetica'))
+        self.lbl_judul.pack()
+        self.ent_fan_ariel = tk.Entry(self,\
+                                    textvariable=self.fan_ariel)
+        self.ent_fan_ariel.pack()
+        self.btn_ariel = tk.Button(self,text='Populer',\
+                                    command= self.btn_ariel_clicked)
+        self.btn_ariel.pack()
+
+    def btn_ariel_clicked(self):
+        nama = self.fan_ariel.get()
+        op = [' Ariel',' Noah',' Peterpan',' dari',' band',' populer']
+        op2 = [' Ariel',' Noah',' Peterpan',' dari',' band',' populer']
+        op3 = [' Ariel',' Noah',' Peterpan',' dari',' band',' populer']
+        op4 = [' Ariel',' Noah',' Peterpan',' dari',' band',' populer']
+        op5 = [' Ariel',' Noah',' Peterpan',' dari',' band',' populer']
+        op6 = [' Ariel',' Noah',' Peterpan',' dari',' band',' populer']
+        oper = random.choice(op) 
+        oper2 = random.choice(op2)
+        oper3 = random.choice(op3) 
+        oper4 = random.choice(op4) 
+        oper5 = random.choice(op5) 
+        oper6 = random.choice(op6) 
+
+
+
+        msg.showinfo("Noah", message = nama + ' : ' + oper + oper2 + oper3 + oper4 + oper5 + oper6)
+
+myapp = MyApp()
+myapp.master.title('Ariel')
+myapp.master.geometry("400x300")
+myapp.master.mainloop()
